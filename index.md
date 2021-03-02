@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Welcome to the_soar_system news updates
 
 You can use the [editor on GitHub](https://github.com/MaxBaex/the_soar_system/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
