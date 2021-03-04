@@ -6,7 +6,7 @@ categories: PCB
 
 # Hardware up and running. 
 
-First PCB Test
+First PCB Test. 
 
 
 ## Hardware pictures
