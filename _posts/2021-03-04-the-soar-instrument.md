@@ -1,3 +1,6 @@
+layout: post
+title: "The Soar Instrument"
+
 # Hardware up and running. 
 
 First PCB Test. 
