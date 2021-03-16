@@ -15,3 +15,4 @@ Enable Bluetooth on your smartphone first.
 ![Monitor Data](../_posts/media/20210316_bluetooth_5.png | width=50)
 
 
+<img src="../_posts/media/20210316_bluetooth_1.png" width="300" />
