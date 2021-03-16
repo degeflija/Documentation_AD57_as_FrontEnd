@@ -4,7 +4,7 @@ Enable Bluetooth on your smartphone first.
 
 Select device
 
-<img src="../_posts/media/20210316_bluetooth_1.png" width="400" />
+<img src="https://github.com/MaxBaex/the_soar_system/raw/gh-pages/_posts/media/20210316_bluetooth_1.png" width="400" />
 
 
 Edit port
