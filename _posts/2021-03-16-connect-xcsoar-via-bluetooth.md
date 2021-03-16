@@ -7,7 +7,7 @@ Select device
 
 Edit port
 
-<img src="https://github.com/MaxBaex/the_soar_system/raw/gh-pages/_posts/media/20210316_bluetooth_1.png" width="400" />
+<img src="https://github.com/MaxBaex/the_soar_system/raw/gh-pages/_posts/media/20210316_bluetooth_2.png" width="400" />
 
 
 Select "SOAR" as this is the_soar_instrument
