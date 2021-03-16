@@ -1,5 +1,3 @@
-# How to connect your smartphone via bluetooth to XCSOAR. 
-
 Enable Bluetooth on your smartphone first. 
 
 Select device
