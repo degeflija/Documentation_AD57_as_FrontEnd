@@ -15,4 +15,4 @@ Enable Bluetooth on your smartphone first.
 ![PCB](https://github.com/maxbaex/the_soar_system/blob/gh-pages/_posts/media/20210316_bluetooth_5.png){ width=25% }
 
 
-https://github.com/maxbaex/the_soar_system/blob/gh-pages/_posts/media/20210316_bluetooth_5.png
+https://github.com/MaxBaex/the_soar_system/blob/gh-pages/_posts/media/20210316_bluetooth_5.png
