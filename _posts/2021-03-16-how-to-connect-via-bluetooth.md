@@ -12,6 +12,6 @@ Enable Bluetooth on your smartphone first.
 
 ![Check Connection](../_posts/media/20210316_bluetooth_4.png)
 
-![Monitor Data](../_posts/media/20210316_bluetooth_5.png){:width="500px"}
+![Monitor Data](../_posts/media/20210316_bluetooth_5.png)<!-- .element height="50%" width="50%" -->
 
 
