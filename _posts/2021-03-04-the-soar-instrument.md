@@ -4,4 +4,4 @@ First PCB Test.
 
 
 ## Hardware pictures
-![PCB](20201123_first_hardware_picture.jpg)
+![PCB](/_posts/media/20201123_first_hardware_picture.jpg)
