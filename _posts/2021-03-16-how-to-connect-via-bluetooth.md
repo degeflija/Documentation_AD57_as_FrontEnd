@@ -1,7 +1,5 @@
-# How to connect to the sensor to XCSOAR via Bluetooth 
+# How to connect your smartphone via bluetooth to XCSOAR. 
 
-
-## Steps to connect your smartphone via bluetooth to XCSOAR. 
 Enable Bluetooth on your smartphone first. 
 
 Select device
