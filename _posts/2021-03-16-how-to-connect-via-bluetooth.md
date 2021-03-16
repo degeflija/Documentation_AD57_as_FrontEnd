@@ -4,15 +4,17 @@
 ## Steps to connect your smartphone via bluetooth to XCSOAR. 
 Enable Bluetooth on your smartphone first. 
 
-![Select Device](../_posts/media/20210316_bluetooth_1.png){ width=25% }
+Select device
+<img src="../_posts/media/20210316_bluetooth_1.png" width="400" />
 
-![Edit Port](../_posts/media/20210316_bluetooth_2.png){ width=25% }
+Edit port
+<img src="../_posts/media/20210316_bluetooth_2.png" width="400" />
 
-![Select SOAR](../_posts/media/20210316_bluetooth_3.png)
+Select "SOAR" as this is the_soar_instrument
+<img src="../_posts/media/20210316_bluetooth_3.png" width="400" />
 
-![Check Connection](../_posts/media/20210316_bluetooth_4.png)
+Check Connection
+<img src="../_posts/media/20210316_bluetooth_4.png" width="400" />
 
-![Monitor Data](../_posts/media/20210316_bluetooth_5.png | width=50)
-
-
-<img src="../_posts/media/20210316_bluetooth_1.png" width="300" />
+Monitor Data
+<img src="../_posts/media/20210316_bluetooth_5.png" width="400" />
