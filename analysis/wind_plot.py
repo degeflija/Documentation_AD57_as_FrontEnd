@@ -1,3 +1,4 @@
+#!/user/bin/env python3
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -23,22 +24,18 @@ elements = [
 "navv acc mag N", "nav acc mag E", "nav acc mag D", "nav ind mag N", "nav ind mag E", "nav ind mag D",
 "roll mag", "nick mag", "yaw mag", "q1mag", "q2mag", "q3mag", "q4mag", "Probe 0", "Probe 1", "Probe 2" ]
 
-# Create a data description for raw data file. Assume 32 bit float for each value.
+# Create a data description for the raw data file format. Assume 32 bit float for each value.
 description = []
 for i in range(0,100):
     description.append((elements[i], 'f4'))
 
-print(description)
-# Create a dtype with the binary data format and the desired column names
+# Create a pandas dataframe
 dt = np.dtype(description)
 data = np.fromfile(file, dtype=dt, sep="")
 df = pd.DataFrame(data)
-print(df["acc x"].head())
-print(df["acc y"].head())
-print(df["acc z"].head())
 
-plt.plot(df["wind N"])
+# Plot some speed GNSS data.
+plt.plot(df["speed GNSS"])
 plt.show()
-# Or if you want to explicitly set the column names
-#df = pd.DataFrame(data, columns=data.dtype.names)
+
 
