@@ -34,8 +34,39 @@ dt = np.dtype(description)
 data = np.fromfile(file, dtype=dt, sep="")
 df = pd.DataFrame(data)
 
-# Plot some speed GNSS data.
-plt.plot(df["speed GNSS"])
-plt.show()
+# process some data
+wind_speed = np.sqrt(df["wind N"] * df["wind N"] + df["wind E"] * df["wind E"])
+wind_direction = np.arctan2(df["wind E"], df["wind N"])
+wind_direction_deg = np.rad2deg(wind_direction) + 180
+print(wind_direction_deg)
+# plot the data
+fig, host = plt.subplots(figsize=(8,5)) # (width, height) in inches
 
+par1 = host.twinx()
+par2 = host.twinx()
+par3 = host.twinx()
+
+host.set_xlabel("Time in 100 Ticks / s")
+
+host.plot(- df["pos DWN"], color='red', label="height", linestyle='dashed', linewidth=0.5)
+host.set_ylabel("height [m]", color='red')
+
+par1.plot(wind_speed, color='green', label="wind speed", linewidth=1)
+par1.set_ylabel("wind speed [m/s]", color='green')
+par1.set_ylim(4, 30)
+
+par2.plot(wind_direction_deg, color='blue', label="wind direction", linewidth=1)
+par2.set_ylabel("wind direction [deg]", color='blue')
+
+par3.plot(df["turn rate"], color='orange', label="turn rate", linewidth=1)
+par3.set_ylabel("turn rate [?]", color='orange')
+par3.set_ylim(-1, +1)
+
+par2.spines['right'].set_position(('outward', 60))
+par3.spines['right'].set_position(('outward', 120))
+fig.tight_layout()
+
+
+plt.show()
+plt.savefig("plot.pdf")
 
