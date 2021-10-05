@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 
 file = "211001.f100"
 
@@ -36,6 +37,8 @@ print(df["acc x"].head())
 print(df["acc y"].head())
 print(df["acc z"].head())
 
+plt.plot(df["wind N"])
+plt.show()
 # Or if you want to explicitly set the column names
 #df = pd.DataFrame(data, columns=data.dtype.names)
 
