@@ -38,6 +38,7 @@ df = pd.DataFrame(data)
 wind_speed = np.sqrt(df["wind N"] * df["wind N"] + df["wind E"] * df["wind E"])
 wind_direction = np.arctan2(df["wind E"], df["wind N"])
 wind_direction_deg = np.rad2deg(wind_direction) + 180
+heading_deg = np.rad2deg(df["yaw"]) + 180
 print(wind_direction_deg)
 # plot the data
 fig, host = plt.subplots(figsize=(8,5)) # (width, height) in inches
@@ -45,6 +46,7 @@ fig, host = plt.subplots(figsize=(8,5)) # (width, height) in inches
 par1 = host.twinx()
 par2 = host.twinx()
 par3 = host.twinx()
+par4 = host.twinx()
 
 host.set_xlabel("Time in 100 Ticks / s")
 
@@ -59,14 +61,18 @@ par2.plot(wind_direction_deg, color='blue', label="wind direction", linewidth=1)
 par2.set_ylabel("wind direction [deg]", color='blue')
 
 par3.plot(df["turn rate"], color='orange', label="turn rate", linewidth=1)
-par3.set_ylabel("turn rate [?]", color='orange')
+par3.set_ylabel("turn rate [rad/s]", color='orange')
 par3.set_ylim(-1, +1)
+
+par4.plot(heading_deg, color='magenta', label="heading", linestyle='dotted', linewidth=1)
+par4.set_ylabel("heading [deg]", color='magenta')
 
 par2.spines['right'].set_position(('outward', 60))
 par3.spines['right'].set_position(('outward', 120))
+par4.spines['right'].set_position(('outward', 180))
 fig.tight_layout()
 
 
 plt.show()
-plt.savefig("plot.pdf")
+
 
