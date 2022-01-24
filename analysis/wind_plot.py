@@ -2,6 +2,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from docutils.nodes import description
 
 file = "211001.f100"
 
@@ -34,19 +35,33 @@ dt = np.dtype(description)
 data = np.fromfile(file, dtype=dt, sep="")
 df = pd.DataFrame(data)
 
+# Generate x axis in minutes
+stepsize = 0.01 / 60.0  #10ms
+stepcnt = len(df)
+minute_list = []
+print(stepsize, stepcnt)
+for i in range(0,stepcnt):
+    minute_list.append(i*stepsize)
+
+
+
 # process some data
 wind_speed = np.sqrt(df["wind N"] * df["wind N"] + df["wind E"] * df["wind E"])
 wind_direction = np.arctan2(df["wind E"], df["wind N"])
 wind_direction_deg = np.rad2deg(wind_direction) + 180
 heading_deg = np.rad2deg(df["yaw"]) + 180
-print(wind_direction_deg)
+relative_wind = np.mod(heading_deg - wind_direction_deg, 360)
+
 # plot the data
+plt.figure(0)
+
 fig, host = plt.subplots(figsize=(8,5)) # (width, height) in inches
 
 par1 = host.twinx()
 par2 = host.twinx()
 par3 = host.twinx()
-par4 = host.twinx()
+#par4 = host.twinx()
+#par5 = host.twinx()
 
 host.set_xlabel("Time in 100 Ticks / s")
 
@@ -57,21 +72,28 @@ par1.plot(wind_speed, color='green', label="wind speed", linewidth=1)
 par1.set_ylabel("wind speed [m/s]", color='green')
 par1.set_ylim(4, 30)
 
-par2.plot(wind_direction_deg, color='blue', label="wind direction", linewidth=1)
-par2.set_ylabel("wind direction [deg]", color='blue')
+par2.plot(df["turn rate"], color='orange', label="turn rate", linewidth=1)
+par2.set_ylabel("turn rate [rad/s]", color='orange')
+par2.set_ylim(-1, +1)
 
-par3.plot(df["turn rate"], color='orange', label="turn rate", linewidth=1)
-par3.set_ylabel("turn rate [rad/s]", color='orange')
-par3.set_ylim(-1, +1)
+par3.plot(wind_direction_deg, color='blue', label="wind direction", linewidth=1)
+par3.set_ylabel("wind direction [deg]", color='blue')
 
-par4.plot(heading_deg, color='magenta', label="heading", linestyle='dotted', linewidth=1)
-par4.set_ylabel("heading [deg]", color='magenta')
+#par4.plot(heading_deg, color='magenta', label="heading", linestyle='dotted', linewidth=1)
+#par4.set_ylabel("heading [deg]", color='magenta')
+
+#par5.plot(relative_wind, color='yellow', label="relative wind", linewidth = 1)
+#par5.set_ylabel("relative wind [deg]", color="yellow")
+
 
 par2.spines['right'].set_position(('outward', 60))
 par3.spines['right'].set_position(('outward', 120))
-par4.spines['right'].set_position(('outward', 180))
+#par4.spines['right'].set_position(('outward', 180))
+#par5.spines['right'].set_position(('outward', 240))
 fig.tight_layout()
 
+plt.figure(0)
+plt.plot(df["vario"])
 
 plt.show()
 
