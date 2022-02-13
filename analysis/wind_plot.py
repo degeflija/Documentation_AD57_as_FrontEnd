@@ -43,8 +43,6 @@ print(stepsize, stepcnt)
 for i in range(0,stepcnt):
     minute_list.append(i*stepsize)
 
-
-
 # process some data
 wind_speed = np.sqrt(df["wind N"] * df["wind N"] + df["wind E"] * df["wind E"])
 wind_direction = np.arctan2(df["wind E"], df["wind N"])

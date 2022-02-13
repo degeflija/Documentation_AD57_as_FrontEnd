@@ -2,3 +2,4 @@
 /analysis/*.f100
 /analysis/*.pdf
 /.idea
+/helper/*.csv
