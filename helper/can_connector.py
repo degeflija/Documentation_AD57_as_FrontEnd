@@ -20,7 +20,7 @@ class CanGet(threading.Thread):
         self.bus = SeeedBus(bustype='seeedstudio', channel=channel, bitrate=1000000)
         filename = datetime.utcnow().strftime("%Y%m%d%H%M%S") + '_data.csv'
         self.file = open(filename, 'w')
-        self.file.writelines(["Time, Temperature, Humidity, Pressure\n"]) # Write header
+        self.file.writelines(["Time,Temperature,Humidity,Pressure\n"]) # Write header
 
     def run(self):
         while True:
@@ -36,7 +36,7 @@ class CanGet(threading.Thread):
                     self.pressure = (int.from_bytes(rxMessage.data, 'little', signed="False")) / 1000.0
 
                 if rxMessage.arbitration_id == 0x216:
-                    line = '{}, {}, {}, {}\n'.format(datetime.utcnow().strftime("%Y%m%d%H%M%S%f"), self.temperature, self.humidity, self.pressure)
+                    line = '{},{},{},{}\n'.format(datetime.utcnow().strftime("%Y%m%d%H%M%S%f"), self.temperature, self.humidity, self.pressure)
                     print(line, end="")
                     self.file.writelines([line])
                     self.file.flush()
@@ -79,10 +79,10 @@ def animate(i):
     if interface.humidity > max_humidity:
         max_humidity = interface.humidity
 
-    if min_pressure < interface.pressure:
+    if interface.pressure < min_pressure:
         min_pressure = interface.pressure
 
-    if max_pressure > interface.pressure:
+    if interface.pressure > max_pressure:
         max_pressure = interface.pressure
 
     x += drawInterval
