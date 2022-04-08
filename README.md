@@ -1,8 +1,4 @@
-## System Design, Documentation and Helper Software
+#Overview
 
-
-# Ideas
-- CAN / RS232 XCSOAR Bridge via WIFI / TCP:   https://github.com/AlphaLima/ESP32-Serial-Bridge   
-
-
+https://github.com/larus-breeze/documentation_and_utilities/blob/master/documentation/Manuals/HKM_VM_Overview.odt
 
