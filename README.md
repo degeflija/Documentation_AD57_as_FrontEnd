@@ -8,7 +8,7 @@ Project description: https://github.com/larus-breeze/documentation_and_utilities
 ### Components and Software
 #### Frontend 
 - Display and user interface
- https://github.com/larus-breeze/sw_frontend
+- https://github.com/larus-breeze/sw_frontend
 
 #### Central Unit  / central sensor
 - Processing of all sensor signals and computation of vario signal
@@ -21,7 +21,7 @@ Project description: https://github.com/larus-breeze/documentation_and_utilities
 - https://github.com/larus-breeze/sw_utility
 
 #### Sense module for temperature and humidity
-- optional small sense module to measure temperature and humidity
+- Optional small sense module to measure temperature and humidity
 - https://github.com/larus-breeze/hw_sense
 
 
