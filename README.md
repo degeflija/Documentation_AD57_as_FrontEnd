@@ -25,3 +25,7 @@ Project description: https://github.com/larus-breeze/documentation_and_utilities
 - https://github.com/larus-breeze/hw_sense
 
 
+
+### TODO:
+- add a hardware overview picture with the CAN wiring
+- 
