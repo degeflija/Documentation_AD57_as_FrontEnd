@@ -3,3 +3,4 @@
 /analysis/*.pdf
 /.idea
 /helper/*.csv
+.~lock.*.odt
