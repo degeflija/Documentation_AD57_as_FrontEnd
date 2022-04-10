@@ -2,7 +2,11 @@
 
 ![Systemoverview](documentation/Manuals/Configurations.png)
 
-Project description: https://github.com/larus-breeze/documentation_and_utilities/blob/master/documentation/Manuals/HKM_VM_Overview.pdf
+Project description:
+
+<p>This demonstrates <a href=" https://github.com/larus-breeze/documentation_and_utilities/blob/master/documentation/Manuals/LARUS_Overview.pdf" title="Project Description">not-so-shortlinks</a>, where the link id is
+present but empty.
+</p>
 
 ## How to Build 
 
