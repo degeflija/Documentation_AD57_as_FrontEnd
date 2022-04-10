@@ -1,6 +1,8 @@
 # Overview
 Project description: https://github.com/larus-breeze/documentation_and_utilities/blob/master/documentation/Manuals/HKM_VM_Overview.pdf
 
+https://github.com/larus-breeze/documentation_and_utilities/blob/master/documentation/Manuals/Configurations.pdf
+
 ![Systemoverview](documentation/CAN_bus_cable_schema.drawio.png)
 
 ## How to Build 
