@@ -2,7 +2,7 @@
 
 ![Systemoverview](documentation/Manuals/Configurations.png)
 
-Project description: https://github.com/larus-breeze/documentation_and_utilities/blob/master/documentation/Manuals/HKM_VM_Overview.pdf
+Project description: https://github.com/larus-breeze/documentation_and_utilities/blob/master/documentation/Manuals/LARUS_FrontEnd_Overview.pdf
 
 ## How to Build 
 
