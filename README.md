@@ -3,7 +3,7 @@ Project description: https://github.com/larus-breeze/documentation_and_utilities
 
 https://github.com/larus-breeze/documentation_and_utilities/blob/master/documentation/Manuals/Configurations.pdf
 
-![Systemoverview](documentation/CAN_bus_cable_schema.drawio.png)
+![Systemoverview](documentation/Manuals/Configurations.png)
 
 ## How to Build 
 
