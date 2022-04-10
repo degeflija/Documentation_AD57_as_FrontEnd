@@ -12,8 +12,8 @@ Project description: https://github.com/larus-breeze/documentation_and_utilities
 
 #### Central Unit  / central sensor
 - Processing of all sensor signals and computation of vario signal
-- https://github.com/larus-breeze/hw_instrument
-- https://github.com/larus-breeze/sw_instrument
+- https://github.com/larus-breeze/hw_sensor
+- https://github.com/larus-breeze/sw_sensor
 
 #### Utility module    
 - Blue pill or F4 based utility module to generate the vario audio sound. Can additionally sense temperature and humidity. 
