@@ -4,9 +4,9 @@
 
 Project description:
 
-<p>This demonstrates <a href=" https://github.com/larus-breeze/documentation_and_utilities/blob/master/documentation/Manuals/LARUS_Overview.pdf" title="Project Description">not-so-shortlinks</a>, where the link id is
-present but empty.
-</p>
+<a href="https://github.com/larus-breeze/documentation_and_utilities/blob/master/documentation/Manuals/LARUS_Overview.pdf" title="Learn Markdown">Markdown tutorial</a>
+
+
 
 ## How to Build 
 
