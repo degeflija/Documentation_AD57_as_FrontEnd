@@ -4,8 +4,7 @@
 
 Project description:
 
-<a href="https://github.com/larus-breeze/documentation_and_utilities/blob/master/documentation/Manuals/LARUS_Overview.pdf" title="Learn Markdown">Markdown tutorial</a>
-
+<a href="https://github.com/larus-breeze/documentation_and_utilities/blob/master/documentation/Manuals/LARUS_Overview.pdf" title="LARUS Overview ">LARUS Overview</a>
 
 
 ## How to Build 
