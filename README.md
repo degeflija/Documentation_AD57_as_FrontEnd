@@ -1,6 +1,6 @@
 # Overview
 
-![Systemoverview](documentation/Manuals/Configurations.png)
+![Systemoverview](documentation/Configurations.png)
 
 <a href="https://github.com/larus-breeze/documentation_and_utilities/blob/master/documentation/Manuals/LARUS_Overview.pdf" title="LARUS Overview ">LARUS Project Overview</a>
 
