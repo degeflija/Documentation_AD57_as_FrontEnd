@@ -16,7 +16,7 @@
 - https://github.com/larus-breeze/sw_frontend
 
 ## Central Unit  / Central Sensor
-- Processing of all sensor signals, computation of vario signal, computation of AHRS and wind
+- Processing of all sensor signals, computation of vario signals, computation of AHRS and wind
 - https://github.com/larus-breeze/hw_sensor
 - https://github.com/larus-breeze/sw_sensor
 
