@@ -2,7 +2,7 @@
 
 ![Systemoverview](documentation/Configurations.png)
 
-<a href="https://github.com/larus-breeze/documentation_and_utilities/blob/master/documentation/Manuals/LARUS_Overview.pdf" title="LARUS Overview ">LARUS Project Overview</a>
+Hier ein etwas umfangreicherer Überblick über das Projekt : <a href="https://github.com/larus-breeze/documentation_and_utilities/blob/master/documentation/Manuals/LARUS_Overview.pdf" title="LARUS Overview ">LARUS Project Overview</a>
 
 
 # Components and Software
