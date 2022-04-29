@@ -3,12 +3,12 @@
 ![Systemoverview](documentation/Configurations.png)
 
 
-Hier ein etwas umfangreicherer Überblick über das Projekt : <a href="https://github.com/larus-breeze/documentation_and_utilities/blob/master/documentation/Manuals/LARUS_Overview.pdf" title="LARUS Overview ">LARUS Project Overview</a>
+Here a little bit more comprehensive overview of this project : <a href="https://github.com/larus-breeze/documentation_and_utilities/blob/master/documentation/Manuals/LARUS_Overview.pdf" title="LARUS Overview ">LARUS Project Overview</a>
 
 
 
 # Components and Software
-## Utility Module    
+## Utility Module (comes in 2 flavors : Standard Utility Board and Horst's Prototype All-In-One-Utility Board)    
 - Blue Pill or F4 based utility module to generate the vario audio sound. Can additionally sense temperature and humidity. Can optionally and additionally handle a flap position sensor, micro switches to detect "gear down" , "brakes out", "flaps above neutral", and a little detached board carrying an array of LEDs to indicate flaps setting  
 - https://github.com/larus-breeze/hw_utility
 - https://github.com/larus-breeze/sw_utility
