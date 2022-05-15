@@ -7,7 +7,7 @@ Here a little bit more comprehensive overview of this project : <a href="https:/
 
 # Components and Software
 
-## Central Unit  / Central Sensor
+## Main Sensor
 - Processing of all sensor signals, computation of vario signals, computation of AHRS and wind
 - https://github.com/larus-breeze/hw_sensor
 - https://github.com/larus-breeze/sw_sensor
