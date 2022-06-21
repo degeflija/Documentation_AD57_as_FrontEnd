@@ -16,6 +16,19 @@ class CanGet(threading.Thread):
     tas = 0.0
     ias = 0.0
     static_pressure = 0.0
+    air_density = 0.0
+
+    vario = 0.0
+    vario_integrator = 0.0
+
+    wind_direction = 0.0
+    wind_speed = 0.0
+    wind_direction_average = 0.0
+    wind_speed_average = 0.0
+
+    euler_r = 0.0
+    euler_n = 0.0
+    euler_y = 0.0
 
     stop = False
     file = None
@@ -46,17 +59,38 @@ class CanGet(threading.Thread):
                     self.file.writelines([line])
                     self.file.flush()
 
+                if rxMessage.arbitration_id == 0x101:  # Euler Angles
+                    self.euler_r = (int.from_bytes(rxMessage.data[0:1], 'little', signed="True")) / 1000.0
+                    self.euler_n = (int.from_bytes(rxMessage.data[2:3], 'little', signed="True")) / 1000.0
+                    self.euler_y = (int.from_bytes(rxMessage.data[4:5], 'little', signed="True")) / 1000.0
+
                 if rxMessage.arbitration_id == 0x102:  # Airspeed
                     self.tas = (int.from_bytes(rxMessage.data[0:1], 'little', signed="False"))
                     self.ias = (int.from_bytes(rxMessage.data[2:3], 'little', signed="False"))
-                    print("TAS: ", self.tas, " IAS: ", self.ias)
 
+                if rxMessage.arbitration_id == 0x103:  # Vario  delivered in mm/s
+                    self.vario = (int.from_bytes(rxMessage.data[0:1], 'little', signed="False")) / 1000.0
+                    self.vario_integrator = (int.from_bytes(rxMessage.data[2:3], 'little', signed="False")) / 1000.0
+
+                if rxMessage.arbitration_id == 0x108:  # Wind delivered in Speed in km/h,   Direction 1/1000 rad
+                    self.wind_direction = (int.from_bytes(rxMessage.data[0:1], 'little', signed="True")) / 1000.0
+                    self.wind_speed = (int.from_bytes(rxMessage.data[2:3], 'little', signed="True"))
+                    self.wind_direction_average = (int.from_bytes(rxMessage.data[4:5], 'little', signed="True")) / 1000.0
+                    self.wind_speed_average = (int.from_bytes(rxMessage.data[6:7], 'little', signed="True"))
 
                 if rxMessage.arbitration_id == 0x109:  # Atmosphere
-                    pass
-                    #print("Atmosphere", rxMessage.data)
+                    self.static_pressure = (int.from_bytes(rxMessage.data[0:3], 'little', signed="False"))
+                    self.air_density = (int.from_bytes(rxMessage.data[4:7], 'little', signed="False"))
 
-
+                print("Euler r n y: ", self.euler_r, self.euler_n, self.euler_y,
+                      " Pressure: ", self.static_pressure,
+                      " TAS: ", self.tas,
+                      " Vario: ", self.vario,
+                      " Vario_Integrated: ", self.vario_integrator,
+                      " Wind_Direction: ", self.wind_direction,
+                      " Wind_Speed: ", self.wind_speed,
+                      " Wind_Direction_Average: ", self.wind_direction_average,
+                      " Wind_Speed_Average: ", self.wind_speed_average)
 
 
             if self.stop is True:
@@ -70,7 +104,7 @@ class CanGet(threading.Thread):
         self.stop = True
 
 
-interface = CanGet('COM20')
+interface = CanGet('COM11')
 interface.start()
 
 
