@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from docutils.nodes import description
 
-file = "211001.f100"
+file = "20220601.f50.f103"
 
 elements = [
 "acc x", "acc y", "acc z", "gyro x", "gyro y", "gyro z", "mag x", "mag y", "mag z",
@@ -23,17 +23,24 @@ elements = [
 "roll", "nick", "yaw",
 "acc vertical", "turn rate", "slip angle", "nick angle",
 "navv acc mag N", "nav acc mag E", "nav acc mag D", "nav ind mag N", "nav ind mag E", "nav ind mag D",
-"roll mag", "nick mag", "yaw mag", "q1mag", "q2mag", "q3mag", "q4mag", "Probe 0", "Probe 1", "Probe 2" ]
+"roll mag", "nick mag", "yaw mag", "q1mag", "q2mag", "q3mag", "q4mag", "Probe 0", "Probe 1", "Probe 2", "Probe 3", "Probe 4", "Probe 5"  ]
 
 # Create a data description for the raw data file format. Assume 32 bit float for each value.
 description = []
-for i in range(0,100):
+for i in range(0,103):
     description.append((elements[i], 'f4'))
 
 # Create a pandas dataframe
 dt = np.dtype(description)
 data = np.fromfile(file, dtype=dt, sep="")
 df = pd.DataFrame(data)
+
+print(df)
+
+
+df.loc[0:3000].to_csv('data.csv')
+
+exit()
 
 # Generate x axis in minutes
 stepsize = 0.01 / 60.0  #10ms
@@ -50,6 +57,16 @@ wind_direction_deg = np.rad2deg(wind_direction) + 180
 heading_deg = np.rad2deg(df["yaw"]) + 180
 relative_wind = np.mod(heading_deg - wind_direction_deg, 360)
 
+data = df['TAS']
+
+print(wind_direction_deg)
+print(wind_speed)
+
+plt.plot(data)
+plt.show()
+
+exit()
+#exit()
 # plot the data
 plt.figure(0)
 
