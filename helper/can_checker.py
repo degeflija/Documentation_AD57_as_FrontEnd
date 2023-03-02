@@ -12,6 +12,7 @@ class CanGet(threading.Thread):
     temperature = 0.0
     humidity = 0.0
     pressure = 0.0
+    voltage = 0.0
 
     tas = 0.0
     ias = 0.0
@@ -93,8 +94,11 @@ class CanGet(threading.Thread):
 
                     #print("Slip angle, Yaw rate, nick angle: ", self.slip_angle, self.yaw_rate, self.nick_angle)
 
+                if rxMessage.arbitration_id == 0x112:  # c_CID_KSB_Vdd; // 0x112
+                    self.voltage = (int.from_bytes(rxMessage.data[0:1], 'little', signed="False"))/10.0
 
-                print("Euler r n y: ", self.euler_r, self.euler_n, self.euler_y,
+                print("Voltage: ", self.voltage,
+                      "Euler r n y: ", self.euler_r, self.euler_n, self.euler_y,
                       " Pressure: ", self.static_pressure,
                       " TAS: ", self.tas,
                       " Vario: ", self.vario,
@@ -121,7 +125,7 @@ class CanGet(threading.Thread):
         self.stop = True
 
 
-interface = CanGet('COM6')
+interface = CanGet('/dev/ttyUSB0')
 interface.start()
 
 

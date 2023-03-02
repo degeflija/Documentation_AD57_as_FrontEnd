@@ -1,6 +1,8 @@
 /analysis/*.ods
-/analysis/*.f100
+/analysis/*.f*
 /analysis/*.pdf
+/analysis/*.csv
+/analysis/*.CRASHDUMP
 /.idea
 /helper/*.csv
 .~lock.*.odt
