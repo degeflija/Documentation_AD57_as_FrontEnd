@@ -35,11 +35,10 @@ elements_f92 = [
 ]
 
 # Put the file name you want to convert here:
-file = "230302_180844.f92"
-#file = "230302_180238.f37"
+file = "230304_073330.f37"
 
 if '.f92' in file:
-    elements  = elements_f92
+    elements = elements_f92
 elif '.f37' in file:
     elements = elements_f37
 else:
@@ -55,8 +54,8 @@ for i in range(0, len(elements)):
 dt = np.dtype(description)
 data = np.fromfile(file, dtype=dt, sep="")
 df = pd.DataFrame(data)
-
 print(df)
 
-df.loc[0:].to_csv(file+'data.csv')
+# Export as CSV file:
+df.loc[0:500000].to_csv(file+'data.csv')
 

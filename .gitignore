@@ -3,6 +3,7 @@
 /analysis/*.pdf
 /analysis/*.csv
 /analysis/*.CRASHDUMP
+*.EEPROM
 /.idea
 /helper/*.csv
 .~lock.*.odt
