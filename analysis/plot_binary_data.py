@@ -46,36 +46,51 @@ df = df[150000:]
 # Prepare the data
 windDirectionAvg = np.arctan2( - df['wind avg E'], - df['wind avg N']) / 2 / np.pi * 360
 windDirectionInst = np.arctan2( - df['wind E'], - df['wind N']) / 2 / np.pi * 360
-windSpeedAvg = np.sqrt(np.square(df['wind avg E']) + np.square(df['wind avg N'])) * 3.6
-windSpeedInst = np.sqrt(np.square(df['wind E']) + np.square(df['wind N'])) * 3.6
+windSpeedAvg = np.sqrt(np.square(df['wind avg E']) + np.square(df['wind avg N']))
+windSpeedInst = np.sqrt(np.square(df['wind E']) + np.square(df['wind N']))
 heading = df['yaw'] / 2 / np.pi * 360
+roll_deg = df['roll'] / 2 / np.pi * 360
+
 
 # Plot the data:
 figure, axis = plt.subplots(2, 2, sharex=True)
 plt.autoscale(enable=True, axis='y')
-axis[0, 0].plot(windDirectionAvg, "b-", label='Average', alpha=0.4)
-axis[0, 0].plot(windDirectionInst, "b--", label='Instantaneous', alpha=0.4,)
 
+axis[0, 0].plot(roll_deg, "b--", alpha=0.5, linewidth=0.5)
+axis[0, 0].legend(["roll angle"], loc="lower left")
+axis[0, 0].grid()
 par1 = axis[0, 0].twinx()
-par1.plot(windSpeedAvg, "r-", label='Average', alpha=0.4)
-par1.plot(windSpeedInst, "r--", label='Instantaneous', alpha=0.4)
+par1.plot(df['wind avg N'], "r-", linewidth=0.5)
+par1.plot(df['wind avg E'], "g-", linewidth=0.5)
+par1.plot(df['wind N'], "r--", linewidth=0.5, alpha=0.6)
+par1.plot(df['wind E'], "g--", linewidth=0.5, alpha=0.6)
+par1.legend(['wind avg N', 'wind avg E', 'wind N', 'wind E'], loc="lower right")
 
-axis[0, 0].legend(["average wind direction", "inst wind direction"], loc="lower left")
+
+axis[0, 1].plot(windDirectionAvg, "b-", label='Average', alpha=1, linewidth=0.5)
+axis[0, 1].plot(windDirectionInst, "b--", label='Instantaneous', alpha=1, linewidth=0.5)
+axis[0, 1].grid()
+par1 = axis[0, 1].twinx()
+par1.plot(windSpeedAvg, "r-", label='Average', alpha=1, linewidth=0.5)
+par1.plot(windSpeedInst, "r--", label='Instantaneous', alpha=1, linewidth=0.5)
+axis[0, 1].legend(["average wind direction", "inst wind direction"], loc="lower left")
 par1.legend(["average wind speed", "inst wind speed"], loc="lower right")
 
-axis[1, 0].plot(df['turn rate'], "b--", alpha=0.4 )
+
+axis[1, 0].plot(df['turn rate'], "b--", alpha=1, linewidth=0.5)
 axis[1, 0].legend(["turn rate"], loc="lower left")
+axis[1, 0].grid()
 par1 = axis[1, 0].twinx()
-par1.plot(df['circle mode'], "y-")
+par1.plot(df['circle mode'], "y-", linewidth=0.5)
 par1.legend(["circle mode"], loc="lower right")
 
 
-axis[0, 1].plot(df['press_alt'], "b--", alpha=0.4 )
-axis[0, 1].legend(["pressure altitude"], loc="lower left")
-
-
-axis[1, 1].plot(df['vario'], "b-", alpha=0.4 )
+axis[1, 1].plot(df['vario'], "b-", alpha=1, linewidth=0.5)
 axis[1, 1].legend(["vario"], loc="lower left")
+axis[1, 1].grid()
+par1 = axis[1, 1].twinx()
+par1.plot(- df['pos DWN'], "b--", alpha=1, linewidth=0.5)
+par1.legend(["pos UP"], loc="lower right")
 
 plt.show()
 
