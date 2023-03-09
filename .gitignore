@@ -1,9 +1,8 @@
-/analysis/*.ods
-/analysis/*.f*
-/analysis/*.pdf
-/analysis/*.csv
-/analysis/*.CRASHDUMP
+*.ods
+*.pdf
+*.csv
+*.CRASHDUMP
+*.f*
 *.EEPROM
 /.idea
-/helper/*.csv
 .~lock.*.odt
