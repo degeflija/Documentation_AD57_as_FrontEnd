@@ -1,6 +1,6 @@
 # Overview
 
-![Systemoverview](documentation/Configurations.png)
+![Systemoverview](Configurations.png)
 
 
 Here a little bit more comprehensive overview of this project : <a href="https://github.com/degeflija/Documentation_AD57_as_FrontEnd/blob/master/documentation/Manuals/LARUS_Overview.pdf" title="LARUS Overview ">LARUS Project Overview</a>
