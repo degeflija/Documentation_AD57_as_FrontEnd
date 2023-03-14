@@ -21,5 +21,8 @@ Here a little bit more comprehensive overview of this project : <a href="https:/
   additionally handle a flap position sensor, micro switches to detect "gear down" , "brakes out", "flaps above neutral", and a little detached board
   carrying an array of LEDs to indicate the current and optimal flaps setting 
 
+- https://github.com/degeflija/hw_F4_Prototype_Utility_Board
+- https://github.com/degeflija/sw_F4_Prototype_Utility
+
 - https://github.com/larus-breeze/hw_utility
 - https://github.com/larus-breeze/sw_utility
