@@ -14,7 +14,7 @@ Here a little bit more comprehensive overview of this project : <a href="https:/
 
 ## Frontend 
 - User interface and system control device based on Air Avionics AD57
-- https://github.com/larus-breeze/sw_frontend
+- https://github.com/degeflija/sw_AD57_FrontEnd
 
 ## Utility Board 
 - Blue Pill or F4 based utility module to generate the vario audio sound. Can additionally sense temperature and humidity. Can optionally and
