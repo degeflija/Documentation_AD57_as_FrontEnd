@@ -1,8 +1,0 @@
-*.ods
-*.pdf
-*.csv
-*.CRASHDUMP
-*.f*
-*.EEPROM
-/.idea
-.~lock.*.odt
