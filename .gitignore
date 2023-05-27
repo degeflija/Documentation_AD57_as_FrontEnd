@@ -3,6 +3,7 @@
 *.png
 *.odg
 *.csv
+*.gif
 *.CRASHDUMP
 *.f*
 *.EEPROM
