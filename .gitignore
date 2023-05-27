@@ -1,5 +1,7 @@
+*.odt
 *.ods
-*.pdf
+*.png
+*.odg
 *.csv
 *.CRASHDUMP
 *.f*
